@@ -88,6 +88,19 @@ class TodosTest {
     }
 
     @Test
+    public void matchEpic4() {
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб", "Булка"};
+        Epic epic = new Epic(55, subtasks);
+
+
+        boolean expected = false;
+        boolean actual = epic.matches(subtasks[3]);
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
     public void matchMeet() {
         Meeting meeting = new Meeting(
                 555,
