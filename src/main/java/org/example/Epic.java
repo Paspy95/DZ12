@@ -10,8 +10,8 @@ public class Epic extends Task {
 
     @Override
     public boolean matches(String query) {
-        int sabtask = subtasks.length;
-        for (int i = 0; i < sabtask; i++) {
+        int numberSubtasks = subtasks.length;
+        for (int i = 0; i < numberSubtasks; i++) {
             if (subtasks[i].contains(query)) {
                 return true;
             }
