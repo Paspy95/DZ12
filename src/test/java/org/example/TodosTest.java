@@ -51,10 +51,9 @@ class TodosTest {
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
-        epic.matches(subtasks[0]);
 
         boolean expected = true;
-        boolean actual = epic.matches(subtasks[1]);
+        boolean actual = epic.matches("Хлеб");
 
         Assertions.assertEquals(expected, actual);
 
@@ -65,10 +64,9 @@ class TodosTest {
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
-        epic.matches(subtasks[1]);
 
         boolean expected = true;
-        boolean actual = epic.matches(subtasks[2]);
+        boolean actual = epic.matches("Молоко");
 
         Assertions.assertEquals(expected, actual);
 
@@ -81,7 +79,7 @@ class TodosTest {
 
 
         boolean expected = true;
-        boolean actual = epic.matches(subtasks[2]);
+        boolean actual = epic.matches("Яйца");
 
         Assertions.assertEquals(expected, actual);
 
@@ -89,12 +87,12 @@ class TodosTest {
 
     @Test
     public void matchEpic4() {
-        String[] subtasks = {"Молоко", "Яйца", "Хлеб", "Булка"};
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
 
         boolean expected = false;
-        boolean actual = epic.matches(subtasks[3]);
+        boolean actual = epic.matches("булка");
 
         Assertions.assertEquals(expected, actual);
 
